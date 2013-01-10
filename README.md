@@ -10,4 +10,4 @@ The basic goal is a simple listing page with 1. Photo or video of some sort 2. A
 When the listing is clicked this leads to a "show" page with: 1. A larger version of the photo or video 2. A larger version of the title 3. A description
 4. Comments
 
-Beyond this functionality, it would be cool if we could create seperate branches or forks with different designs of the common template that anyone could access. I am new to Github and not sure how that would work.
+Beyond this functionality, it would be cool if we could create seperate branches or forks with different designs of the common template that anyone could access.
