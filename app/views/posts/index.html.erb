@@ -31,19 +31,21 @@
       
       <div class="title">
        <%= link_to post.title, post_path(post) %>
-<div class="date"><%= post.created_at.strftime("%B %d, %Y") %></div>
-     </div>
-        <div class="description"><%= post.description %></div>
-        <div class="tags"><%= post.subheading %></div>
-        
-        
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+<div class="date"><%= post.created_at.strftime("%B %d, %Y") %>   [<%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_post_path(post), :class => 'text' %> |
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       post_path(post),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'text' %>
+                      :class => 'text' %>]
+
+</div>
+     </div>
+        <div class="description"> Description: <%= post.description %></div>
+        <div class="tags">Tags: <%= post.subheading %></div>
+        
+        
+          
         </td>
       </tr>
     <% end %>
