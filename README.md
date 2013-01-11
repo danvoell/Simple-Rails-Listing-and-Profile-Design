@@ -5,9 +5,18 @@ This is meant to be a very basic template for Rails Applications which includes 
 
 The reason for starting this is that although I love Twitter Bootstrap and Rails scaffolds, they are both way too generic and barebones. I want to create an out of the box app that you can craft your next Job Listing site, or Groupon, or Video Voting site, or Blog, or Flippa Clone ...
 
-The basic goal is a simple listing page with 1. Photo or video of some sort 2. A Title 3. A Description
+Index Page<br>
+1. Photo <br>
+2. Title <br>
+3. Description
 
-When the listing is clicked this leads to a "show" page with: 1. A larger version of the photo or video 2. A larger version of the title 3. A description
+Show Page<br>
+1. A larger version of the photo<br>
+2. A larger version of the title <br>
+3. Description <br>
 4. Comments
+
+New Page<br>
+Styalize
 
 Beyond this functionality, it would be cool if we could create seperate branches or forks with different designs of the common template that anyone could access.
