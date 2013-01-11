@@ -23,4 +23,4 @@ I would like to could create seperate branches or forks with different designs o
 
 If you like this concept, please star OR help out. If we have enough interest, we can get some designers to help out.
 
-This is what it currently looks like <br><br> <img src="http://snag.gy/zv4mR.jpg">
+This is what it currently looks like <br><br> <img src="http://snag.gy/MBijF.jpg">
