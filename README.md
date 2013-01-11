@@ -19,4 +19,6 @@ Show Page<br>
 New Page<br>
 Styalize
 
-Beyond this functionality, it would be cool if we could create seperate branches or forks with different designs of the common template that anyone could access.
+I would like to could create seperate branches or forks with different designs of the common template that anyone could access.
+
+If you like this concept, please star OR help out. If we have enough interest, we can get some designers to help out.
