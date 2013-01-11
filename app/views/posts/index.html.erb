@@ -19,7 +19,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:picture) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
@@ -31,9 +30,8 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= link_to post.id, post_path(post) %></td>
-        <td><%= post.picture %></td>
-        <td><%= post.title %></td>
+        <td><%= image_tag post.image_url(:thumb) if post.image? %></td>
+        <td><%= link_to post.title, post_path(post) %></td>
         <td><%= post.description %></td>
         <td><%= post.subheading %></td>
         <td><%=l post.created_at %></td>
