@@ -1,7 +1,7 @@
 Simple-Rails-Listing-and-Profile-Design
 =======================================
 
-This is meant to be a very basic template for Rails Applications which includes a landing page (index) that functions as a list and a well designed show (show) page which profiles each entry on the list. It is open source. Please help contribute as I am just a beginner.  
+Basic template for Ruby on Rails list type applications. Includes index and show page styles for quick start. Open source. 
 
 The reason for starting this is that although I love Twitter Bootstrap and Rails scaffolds, they are both way too generic and barebones. I want to create an out of the box app that you can craft your next Job Listing site, or Groupon, or Video Voting site, or Blog, or Flippa Clone ...
 
@@ -22,3 +22,5 @@ Styalize
 I would like to could create seperate branches or forks with different designs of the common template that anyone could access.
 
 If you like this concept, please star OR help out. If we have enough interest, we can get some designers to help out.
+
+This is what it currently looks like <br><br> <img src="http://snag.gy/MBijF.jpg">
