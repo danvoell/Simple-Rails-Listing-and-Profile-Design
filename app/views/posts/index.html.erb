@@ -16,33 +16,36 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-<table class="table table-striped">
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:picture) %></th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:subheading) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><h3>Search from the list below or <%= link_to t('.new', :default => t("helpers.links.new")),
+            new_post_path,
+            :class => 'btn btn-success' %></h3>
+</th>
     </tr>
   </thead>
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= image_tag post.image_url(:thumb) if post.image? %></td>
-        <td><%= link_to post.title, post_path(post) %></td>
-        <td><%= post.description %></td>
-        <td><%= post.subheading %></td>
-        <td><%=l post.created_at %></td>
         <td>
+<%= image_tag post.image_url(:thumb) if post.image? %>
+      
+      <div class="title">
+       <%= link_to post.title, post_path(post) %>
+<div class="date">- <%= post.created_at.strftime("%B %d, %Y") %></div>
+     </div>
+        <div class="description"><%= post.description %></div>
+        <div class="tags"><%= post.subheading %></div>
+        
+        
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_post_path(post), :class => 'btn btn-mini' %>
+                      edit_post_path(post), :class => 'text' %> |
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       post_path(post),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+                      :class => 'text' %>
         </td>
       </tr>
     <% end %>

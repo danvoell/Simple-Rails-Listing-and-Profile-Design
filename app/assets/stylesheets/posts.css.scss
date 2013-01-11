@@ -1,3 +1,34 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+img {
+   border:1px solid #021a40;
+   float: left;
+   margin-right: 15px;
+}
+
+
+.title {
+	font-size: 22px;
+	font-weight: bold;
+	}
+
+.description {
+	color: #057D9F;
+	font-size: 14px;
+	margin-top: 10px;
+	line-height:125%
+	}	
+
+.tags {
+	
+	Color: #FF8100;
+	font-size: 12px;
+	margin-top: 15px;
+}
+
+.date {
+	font-size: 10px;
+	float: right;
+	}	

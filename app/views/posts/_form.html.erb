@@ -1,9 +1,4 @@
 <%= form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :picture, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :picture, :class => 'text_field' %>
-    </div>
   </div>
   <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
@@ -18,7 +13,7 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :subheading, :class => 'control-label' %>
+    <%= f.label :tags, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :subheading, :class => 'text_field' %>
     </div>
