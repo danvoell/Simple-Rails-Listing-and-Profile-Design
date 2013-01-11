@@ -1,17 +1,20 @@
 <%= form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
   </div>
+  
   <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :title, :class => 'text_field' %>
     </div>
   </div>
+  
   <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :description, :class => 'text_field' %>
     </div>
   </div>
+  
   <div class="control-group">
     <%= f.label :tags, :class => 'control-label' %>
     <div class="controls">
@@ -19,9 +22,14 @@
     </div>
   </div>
 
+  <div class="control-group">
+  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+  <%= f.text_field :tag_list %>
+</div>
+
 <%= f.file_field :image %>
 
-  <div class="form-actions">
+  <div class="control-group">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 posts_path, :class => 'btn' %>

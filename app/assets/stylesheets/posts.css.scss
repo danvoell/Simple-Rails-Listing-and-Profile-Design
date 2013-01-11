@@ -10,10 +10,16 @@ img {
 
 
 .title {
-	font-size: 22px;
+	font-size: 20px;
 	}
 
 
+#tag_cloud {
+  line-height: 1.6em;
+  .s { font-size: 0.6em; }
+  .m { font-size: 0.8em; }
+  .l { font-size: 1.0em; }
+}
 
 
 
@@ -28,7 +34,7 @@ img {
 	
 	Color: #FF8100;
 	font-size: 12px;
-	margin-top: 15px;
+	margin-top: 5px;
 	
 }
 
@@ -50,11 +56,7 @@ img {
 	color: #FFBA73;
 	font-weight: bold;
 	margin: 15px 10px 0px 10px;
-
 }	
-
-
-
 
 h4 {
 	
@@ -62,6 +64,4 @@ h4 {
 	color: #025167;
 	text-weight: bold;
 	font-size: 26px;
-
-
 }	

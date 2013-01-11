@@ -19,8 +19,9 @@
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
+      <th>
       <h4>Find your favorite post</h4>
-
+</th>
     </tr>
   </thead>
   
@@ -49,7 +50,14 @@
 
 
         <div class="description"> Description: <%= post.description %></div>
-        <div class="tags">Tags: <%= post.subheading %></div>
+        <div class="tags">Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
+
+
+        
+
+
+
+
 
 <!-- Optional Posted By
         <div class="user">Posted By: <%= post.subheading %></div>
@@ -110,12 +118,54 @@
  </h5>
 
 <table class="table table-bordered">
-
+<th>Sign Up </th>
 <tr>
-<td><h5>Sign Up - Email me when this tag is mentioned.</h5>
+<td><h5>Email me when this tag is mentioned.</h5>
 </td>
 </tr>
 </table>
+
+
+<table class="table table-bordered">
+ <th align="center">Tag Cloud</th>
+ <tr>
+<td> 
+<div id="tag_cloud">
+  <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+</td>
+</tr>
+</table>
+
+
+<table class="table table-bordered">
+ <th>Advertisement</th>
+ <tr>
+<td> 
+
+</td>
+</tr>
+</table>
+
+
+<table class="table table-bordered">
+ <div class="rightcolumn">
+  <th>Most Votes</th>
+ <tr>
+<td> 
+<div id="tag_cloud">
+  <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+</div>
+</td>
+</tr>
+</table>
+
+
 </div>
 
 </div>
