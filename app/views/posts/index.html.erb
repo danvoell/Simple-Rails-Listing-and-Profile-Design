@@ -28,6 +28,7 @@
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
+      <th></th>
       <th>
       <h4>Find your favorite post</h4>
 </th>
@@ -39,12 +40,15 @@
     <% @posts.each do |post| %>
       <tr>
         
-<!-- Voting Section of main table starts here
 <td>
-<a href="#login-modal" class="btn btn-info" data-toggle="modal"><i class="icon-arrow-up"></i>+10
+<a href="#login-modal" class="btn btn-info" data-toggle="modal"><i class="icon-arrow-up"></i>
+
+  +<%= post.reputation_for(:votes).to_i %>
+<%= link_to "up", vote_post_path(post, type: "up"), method: "post" %>
 </td>
- Voting Section end-->
- 
+
+
+
 
 
 <!-- Main Section of main table starts here -->
@@ -60,13 +64,6 @@
 
         <div class="description"> Description: <%= post.description %></div>
         <div class="tags">Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
-
-
-        
-
-
-
-
 
 <!-- Optional Posted By
         <div class="user">Posted By: <%= post.subheading %></div>

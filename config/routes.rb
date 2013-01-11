@@ -1,7 +1,9 @@
 SimpleRailsListingAndProfileDesign::Application.routes.draw do
   devise_for :users
 
-  resources :posts
+  resources :posts do
+    member { post :vote }
+  end  
 
   root :to => "posts#index"
 
