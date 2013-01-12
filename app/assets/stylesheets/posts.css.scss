@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 img {
-   border:1px solid #021a40;
    float: left;
    margin-right: 15px;
+   border-radius: 10px;
 }
 
 
@@ -28,6 +28,14 @@ img {
 	font-size: 14px;
 	margin-top: 10px;
 	line-height:125%
+	}	
+
+
+.votecount {
+	color: #057D9F;
+	font-size: 10px;
+	margin-left: 3px;
+	font-weight: bold;
 	}	
 
 .tags {
