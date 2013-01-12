@@ -61,8 +61,10 @@
 
 
 
+
         <div class="description"> Description: <%= post.description %></div>
-        <div class="tags">Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
+        
+        <span class="body">Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></span>
 
 <!-- Optional Posted By
         <div class="user">Posted By: <%= post.subheading %></div>
@@ -77,9 +79,8 @@
      
 
 
-<!-- Right Column of main table starts here 
-        <td>
--->        
+
+            
 
 
 <!-- This section adds a post date and ability to edit or delete a post
@@ -108,17 +109,17 @@
 
 -->
 
-<!-- FB and Twitter Buttons
+<td>  
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="officialrecruit" data-count="none">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> <br>
+<%= link_to image_tag( "/assets/face.png" ), "http://www.facebook.com/sharer.php?s=100&p[#{post_url(post)}]&p[#{post.image}]&p[post.title]" %><br>
+<%= link_to image_tag( "/assets/twit.png" ), "http://twitter.com/home?status=#{post.title} #{post_url(post)}" %><br>
+<%= link_to image_tag( "/assets/goog.png" ), "https://plus.google.com/share?url=#{post_url(post)}" %>
 
-
-<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
-        </td>
+</td>
+      
 
       </tr>
--->
+
 
 
     <% end %>

@@ -5,13 +5,22 @@
 img {
    float: left;
    margin-right: 15px;
+   margin-bottom: 2px;
    border-radius: 10px;
+   display: inline-block;
 }
 
 
 .title {
 	font-size: 20px;
+	color: #FF8100;
 	}
+
+
+.body A:link {color: #FF8100; text-decoration: none}
+.body A:visited {color: #61b7cf; text-decoration: none}
+.body A:active {color: #61b7cf; text-decoration: none}
+.body A:hover {color: #61b7cf ; text-decoration: underline; color: red;}
 
 
 #tag_cloud {

@@ -66,6 +66,9 @@ def vote
   redirect_to :back, notice: "Thank you for voting"
 end
 
+def tweet_text
+  @tweet_text = URI.escape "#{post_title} via #{username}"
+end
 
   # PUT /posts/1
   # PUT /posts/1.json
