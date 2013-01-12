@@ -28,7 +28,6 @@
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th></th>
       <th>
       <h4>Find your favorite post</h4>
 </th>
@@ -39,14 +38,16 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        
+
+
+<!-- This is a vote section #NEEDS to be styalized clicking word up adds one point        
 <td>
 <a href="#login-modal" class="btn btn-info" data-toggle="modal"><i class="icon-arrow-up"></i>
 
   +<%= post.reputation_for(:votes).to_i %>
 <%= link_to "up", vote_post_path(post, type: "up"), method: "post" %>
 </td>
-
+-->
 
 
 
@@ -78,9 +79,9 @@
      
 
 
-<!-- Right Column of main table starts here -->
+<!-- Right Column of main table starts here 
         <td>
-        
+-->        
 
 
 <!-- This section adds a post date and ability to edit or delete a post
@@ -97,6 +98,8 @@
 
 -->
 
+
+<!-- Buy This Product #NEEDS to be attached to payment method
     <div class="money">
       $10
     </div><br>
@@ -104,9 +107,21 @@
 <div style="text-align:center;">
 <button class="btn btn-info" type="button">Buy Now</button>
 </div>
+
+-->
+
+<!-- FB and Twitter Buttons
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="officialrecruit" data-count="none">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> <br>
+
+
+<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
         </td>
 
       </tr>
+-->
+
 
     <% end %>
   </tbody>
