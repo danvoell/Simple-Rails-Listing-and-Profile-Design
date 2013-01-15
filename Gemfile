@@ -13,6 +13,8 @@ gem "carrierwave"
 gem 'acts-as-taggable-on'
 gem 'activerecord-reputation-system', require: 'reputation_system'
 gem 'devise'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 # Gems used only for assets and not required
 # in production environments by default.

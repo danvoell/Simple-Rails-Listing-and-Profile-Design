@@ -5,9 +5,17 @@ class PostsController < ApplicationController
   def index
     if params[:tag]
       @posts = Post.tagged_with(params[:tag])
+        
     else
       @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
+      @search = Post.search do
+      fulltext params[:search]
+      end
+      @posts = @search.results
     end
+
+
+
 
     respond_to do |format|
       format.html # index.html.erb

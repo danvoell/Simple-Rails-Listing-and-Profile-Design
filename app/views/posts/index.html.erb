@@ -32,7 +32,10 @@
 <th></th>
 
       <th>
-      <h4>Find your favorite post</h4>
+      <h4>Find your favorite post</h4> 
+
+      
+
 </th>
     </tr>
   </thead>
@@ -163,9 +166,17 @@
 
 
 <table class="table table-bordered">
- <th>Advertisement</th>
+ <th>Search</th>
  <tr>
 <td> 
+
+<%= form_tag posts_path, :method => :get do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+      <% end %>
+
 
 </td>
 </tr>
