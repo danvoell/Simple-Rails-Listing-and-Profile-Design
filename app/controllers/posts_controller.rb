@@ -9,9 +9,9 @@ class PostsController < ApplicationController
       @posts = Post.tagged_with(params[:tag])
         
     else
-      @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
       @search = Post.search do
       fulltext params[:search]
+      @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
       end
       @posts = @search.results
     end
@@ -54,6 +54,7 @@ end
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    authorize! :edit, @post
   end
 
   # POST /posts

@@ -8,6 +8,7 @@
 </head>
 <body>
 
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -16,6 +17,26 @@
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=380308788718019";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="navbar">
+  <div class="navbar-inner">
+
+      <div class="brand"><a href="/">Lists and Profiles</a></div>
+      <ul class="nav">
+        <li><a href="#">About</a></li>
+
+        <% if user_signed_in? %>
+  <li><a href="#"><%= current_user.email %></a></li>
+ <li> <%= link_to 'Edit profile', edit_user_registration_path %></li>
+ <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+<% else %>
+ <li> <%= link_to "Sign up", new_user_registration_path %></li>
+  <li><%= link_to "Login", new_user_session_path %></li>
+<% end %>
+      </ul>
+    </div>
+  </div>
+
 
 <%= yield %>
 
