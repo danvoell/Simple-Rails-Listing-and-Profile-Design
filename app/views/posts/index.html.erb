@@ -66,6 +66,8 @@
         
         <span class="body">Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></span>
 
+<span class="comments">| (<%= post.comments.count %>) comment(s)</span>
+
 <!-- Optional Posted By
         <div class="user">Posted By: <%= post.subheading %></div>
  -->      
