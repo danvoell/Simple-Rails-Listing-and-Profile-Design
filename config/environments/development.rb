@@ -43,8 +43,8 @@ config.action_mailer.smtp_settings = {
   domain: "railscasts.com",
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: ENV["danvoell"],
-  password: ENV["splashcam2"]
+  user_name: ENV["GMAIL_USERNAME"],
+  password: ENV["GMAIL_PASSWORD"]
 }
 
 # Specify what domain to use for mailer URLs
