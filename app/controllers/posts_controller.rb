@@ -7,17 +7,9 @@ class PostsController < ApplicationController
   def index
     if params[:tag]
       @posts = Post.tagged_with(params[:tag])
-        
-    else
-      @search = Post.search do
-      fulltext params[:search]
+     else
       @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
       end
-      @posts = @search.results
-    end
-
-
-
 
     respond_to do |format|
       format.html # index.html.erb
@@ -61,7 +53,7 @@ end
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
-
+    @post.user = current_user
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }

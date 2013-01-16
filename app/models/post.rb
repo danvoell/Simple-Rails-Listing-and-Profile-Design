@@ -11,9 +11,4 @@ def to_param
 "#{id}-#{title}".parameterize
 end
 
-searchable do
-	text :title, :boost => 5
-	text :description
-	end
-
 end
