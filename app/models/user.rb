@@ -8,14 +8,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :profile_attributes
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :profile_attributes, :username, :image
   # attr_accessible :title, :body
 
   has_one :profile
   accepts_nested_attributes_for :profile
   has_many :posts
 
-has_and_belongs_to_many :roles
+   has_and_belongs_to_many :roles
+ mount_uploader :image, ImageUploader
 
 def role?(role)
       return !!self.roles.find_by_name(role.to_s.camelize)

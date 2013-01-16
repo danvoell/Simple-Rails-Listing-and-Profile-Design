@@ -21,7 +21,7 @@ end
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id])
+  @post = Post.find(params[:id])
   @commentable = @post
   @comments = @commentable.comments
   @comment = Comment.new

@@ -15,9 +15,17 @@
  <div class="votecountshow">+<%= @post.reputation_for(:votes).to_i %> Votes<%= link_to image_tag( "/assets/arrow.png" ), vote_post_path(@post, type: "up"), method: "post" %></div><br><br>
 </div>
 <hr>
-Likes: <%= @post.picture %><%= image_tag @post.image_url(:mini) if @post.image? %><%= @post.picture %><%= image_tag @post.image_url(:mini) if @post.image? %>
 
-<br><br><br>
+
+<div class="row">
+<div class="span2">
+Posted By: <br>
+<%= image_tag @post.user.image_url(:mini) if @post.user.image? %>
+</div><div class="span7">Liked By:<br>
+<%= image_tag @post.image_url(:mini) if @post.image? %><%= image_tag @post.image_url(:mini) if @post.image? %>
+</div>
+</div>
+
 <hr>
 <div class="span3">
 <h2> Comments </h2>
@@ -28,7 +36,7 @@ Likes: <%= @post.picture %><%= image_tag @post.image_url(:mini) if @post.image? 
 <%= render "comments/form" %>
 </div>
 
-<%= mail_to @post.user.email %>
+<%= @post.user.username if @post.user.username? %>
 
 <div>
   <%= link_to t('.back', :default => t("helpers.links.back")),
