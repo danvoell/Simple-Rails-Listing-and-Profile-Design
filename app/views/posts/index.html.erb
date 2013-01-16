@@ -4,12 +4,15 @@
   <div class="span10">
 
 <%- model_class = Post -%>
+<div class="mainheader">Post, Discuss and Execute Game Strategies</div>
 
 <table class="table table-striped table-bordered">
-  <thead>
+ <!-- <thead>
     <tr>
 
-<th></th>
+
+
+ <th></th>
 
       <th>
       <h4>Find your favorite post</h4> 
@@ -17,8 +20,10 @@
       
 
 </th>
+
+
     </tr>
-  </thead>
+  </thead>-->
   
 
   <tbody>
@@ -96,7 +101,7 @@
 
 <td>  
 
-<%= link_to image_tag( "/assets/face.png" ), "http://www.facebook.com/sharer.php?s=100&p[#{post_url(post)}]&p[#{post.image}]&p[post.title]" %><br>
+<!--<%= link_to image_tag( "/assets/face.png" ), "http://www.facebook.com/sharer.php?s=100&p[#{post_url(post)}]&p[#{post.image}]&p[post.title]" %><br>-->
 <%= link_to image_tag( "/assets/twit.png" ), "http://twitter.com/home?status=#{post.title} #{post_url(post)}" %><br>
 <%= link_to image_tag( "/assets/goog.png" ), "https://plus.google.com/share?url=#{post_url(post)}" %>
 

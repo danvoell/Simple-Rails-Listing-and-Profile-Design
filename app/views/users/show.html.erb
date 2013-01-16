@@ -1,0 +1,17 @@
+
+<div class="container">
+
+Your User Profile
+
+<%= @user.email %> - <%= link_to 'Edit profile', edit_user_registration_path %>
+<%= image_tag @user.image_url(:mini) if @user.image? %>
+<br><br><br><br>Posts by 
+<%= @user.username if @user.username? %>
+<br>
+<% @user.posts.each do |post| %>
+
+<%= link_to post.title, post_path(post) %> 
+<br>
+<% end %>
+
+</div>

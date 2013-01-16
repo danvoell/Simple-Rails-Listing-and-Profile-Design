@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_one :profile
   accepts_nested_attributes_for :profile
   has_many :posts
+  has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum
 
    has_and_belongs_to_many :roles
  mount_uploader :image, ImageUploader
@@ -25,6 +26,7 @@ def role?(role)
   def has_role?(role_sym)
   roles.any? { |r| r.name.underscore.to_sym == role_sym }
 end
+
 
 private
 
