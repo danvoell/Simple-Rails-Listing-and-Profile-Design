@@ -12,14 +12,36 @@
 
 <div class="tagsshow">Tags: <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
 
- <div class="votecount">+<%= @post.reputation_for(:votes).to_i %> Votes</div><%= link_to image_tag( "/assets/arrow.png" ), vote_post_path(@post, type: "up"), method: "post" %><br><br>
+ <div class="votecountshow">+<%= @post.reputation_for(:votes).to_i %> Votes<%= link_to image_tag( "/assets/arrow.png" ), vote_post_path(@post, type: "up"), method: "post" %></div><br><br>
 </div>
 <hr>
+Likes: <%= @post.picture %><%= image_tag @post.image_url(:mini) if @post.image? %><%= @post.picture %><%= image_tag @post.image_url(:mini) if @post.image? %>
+
+<br><br><br>
+<hr>
+<div class="span3">
 <h2> Comments </h2>
 
-
 <%= render "comments/comments" %>
+</div>
+<div class="span3">
 <%= render "comments/form" %>
+</div>
+
+<div>
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              posts_path, :class => 'text'  %> |
+         
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_post_path(@post), :class => 'text' %> |
+
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              post_path(@post),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'text' %>
+</div>
+<br><br>
 
 </div>
 <div class="span3">
@@ -84,6 +106,17 @@
 </tr>
 </table>
 
+<table class="table table-bordered">
+ <div class="rightcolumn">
+  <th>Most Votes</th>
+</div>
+ <tr>
+<td> 
+
+</td>
+</tr>
+</table>
+
 
 </div>
 
@@ -91,19 +124,6 @@
 </div>
 <div class="row"
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              posts_path, :class => 'btn'  %>
-         
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_post_path(@post), :class => 'btn' %>
-
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              post_path(@post),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-</div>
 </div>
 </div>
 
