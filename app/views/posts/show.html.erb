@@ -2,41 +2,52 @@
 
 <div class="container">
 <div class="row">
-<div class="span9">
+<div class="offset1 span8">
+
+<div class="row">
+<%= image_tag @post.user.image_url(:mini) if @post.user.image? %>
+
+ <div class="titleshow"><%= @post.title %>
+</div> <div class="titlesubshow">
+<%= @post.user.username if @post.user.username? %> posted <%= time_ago_in_words(@post.created_at) %> ago.
+</div></div><br>
+
   <div class="row">
  <%= @post.picture %><%= image_tag @post.image_url(:medium) if @post.image? %>
- <div class="titleshow"><%= @post.title %>
-</div>
+
   
-<div class="descriptionshow"><%= @post.description %></div>
+<div class="descriptionshow">Strategy Description: <%= @post.description %></div>
 
-<div class="tagsshow">Tags: <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
-
- <div class="votecountshow">+<%= @post.reputation_for(:votes).to_i %> Votes<%= link_to image_tag( "/assets/arrow.png" ), vote_post_path(@post, type: "up"), method: "post" %></div><br><br>
 </div>
-<hr>
 
 
 <div class="row">
-<div class="span2">
-Posted By: <br>
-<%= image_tag @post.user.image_url(:mini) if @post.user.image? %>
-</div><div class="span7">Liked By:<br>
-<%= image_tag @post.image_url(:mini) if @post.image? %><%= image_tag @post.image_url(:mini) if @post.image? %>
-</div>
-</div>
 
-<hr>
-<div class="span3">
-<h2> Comments </h2>
+  <hr>
+<div class="span4">
+
+   <div class="title"> Strategy Discussion </div>
 
 <%= render "comments/comments" %>
-</div>
-<div class="span3">
+
+
 <%= render "comments/form" %>
 </div>
 
-<%= @post.user.username if @post.user.username? %>
+<!--<div class="videoshow">Game Day Video:<br> <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div> -->
+<div class="span4">
+
+<div class="likeshow">
+Liked By:<br>
+<%= image_tag @post.image_url(:mini) if @post.image? %><%= image_tag @post.image_url(:mini) if @post.image? %>
+<br><br><br><br></div>
+
+<div class="tagsshow">Tags:<br> <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
+
+</div>
+</div>
+
+
 
 <div>
   <%= link_to t('.back', :default => t("helpers.links.back")),
@@ -54,20 +65,33 @@ Posted By: <br>
 <br><br>
 
 </div>
-<div class="span3">
+<div class="span2">
 
 
  <h5>
 
 
-<%= button_to("New Post", new_post_path, :class => 'btn btn-block btn-success', method: :get)  %>
+<%= button_to("New Strategy", new_post_path, :class => 'btn btn-block btn-success', method: :get)  %>
 
  </h5>
 
 <table class="table table-bordered">
-<th>Sign Up </th>
+<th>Share This Strategy </th>
 <tr>
-<td><h5>Email me when this tag is mentioned.</h5>
+<td><div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div><br>
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="Hightlightmaker">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+</td>
+</tr>
+</table>
+
+<table class="table table-bordered">
+ <th>Coaches Other Posts</th>
+ <tr>
+<td> 
+
+
 </td>
 </tr>
 </table>
@@ -86,39 +110,6 @@ Posted By: <br>
 </tr>
 </table>
 
-
-<table class="table table-bordered">
- <th>Search</th>
- <tr>
-<td> 
-
-
-</td>
-</tr>
-</table>
-
-
-<table class="table table-bordered">
- <div class="rightcolumn">
-  <th>Most Votes</th>
-</div>
- <tr>
-<td> 
-
-</td>
-</tr>
-</table>
-
-<table class="table table-bordered">
- <div class="rightcolumn">
-  <th>Most Votes</th>
-</div>
- <tr>
-<td> 
-
-</td>
-</tr>
-</table>
 
 
 </div>

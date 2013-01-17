@@ -1,7 +1,9 @@
 <div class="container">
 <% @users.each do |user| %>
 
-<%= user.username %>
+<br>
+
+<%= link_to user.username, user_path(user) %>
 
 <% end %>
 </div>
