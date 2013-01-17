@@ -3,23 +3,63 @@
 
 <div class="profile">
 	<div class="row">
-		<div class="span4">
-<%= image_tag @user.image_url(:medium) if @user.image? %></div>
-<div class="span2">
-<div class="title"><%= @user.username if @user.username? %></div> - <%= link_to 'Edit profile', edit_user_registration_path %>
+		
+<%= image_tag @user.image_url(:medium) if @user.image? %>
+<div class="profilename">
+<%= @user.username if @user.username? %></div>
+<div class="profileteam">
+Team: MUHS
 </div>
+
+<div class="profilereputation">
+Score: <%= @user.reputation_for(:votes).to_i %> points
 </div>
-</div>
+
+<div class="span6">
+
 <br>
 
-<div class="span12">
-Posts by 
-
-<br>
 <% @user.posts.each do |post| %>
+ <div class="indiepost"> 
+<!-- VoTE 
+<%= link_to image_tag( "/assets/arrow.png" ), vote_post_path(post, type: "up"), method: "post" %><br><br>
+ 
+ <div class="votecount">+<%= post.reputation_for(:votes).to_i %></div>
+VOTE -->
 
-<%= link_to post.title, post_path(post) %> 
+<!-- Main Section of main table starts here -->
+        
+<%= image_tag post.image_url(:thumb), :class => 'imgmore' if post.image? %>
+      
+      <div class="title">
+       <%= link_to post.title, post_path(post) %>  
+      
+      </div>
+
+
+
+
+        <div class="description"> Description: <%= post.description %></div>
+        
+        <span class="body">Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></span>
+
+<span class="comments">| (<%= post.comments.count %>) comment(s) |  Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username if post.user.username? %> </span> 
+
+
 <br>
+</div>
 <% end %>
 </div>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+<br>
+
+
 </div>

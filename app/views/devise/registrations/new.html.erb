@@ -1,30 +1,50 @@
-<div class="register">
-  <h1>Sign up</h1>
+<div class="container">
 
+<div class="row">
+
+<div class="span6">
+<div class="landingpage">Build Game Strategies, Together.</div>
+<div class="landingpagesub">Analyze game day strategies, formations, and plays with other winning coaches and athletes</div>
+</div>
+
+<div class="span6">  
+<div class="register">
+<div class="signup">Signup Today</div><br>
   <%= form_for(resource, :as => resource_name,
                          :url => registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
-    <h2><%= f.label :email %></h2>
-    <p><%= f.text_field :email %></p>
+ 
+    <p><%= f.text_field :email, :placeholder => 'email' %></p>
 
-    <h2><%= f.label :password %></h2>
-    <p><%= f.password_field :password %></p>
 
-    <h2><%= f.label :password_confirmation %></h2>
-    <p><%= f.password_field :password_confirmation %></p>
+  <%= f.text_field :username, :placeholder => 'username' %>
 
-    <%= f.fields_for :profile do |profile_form| %>
-      <h2><%= profile_form.label :first_name %></h2>
-      <p><%= profile_form.text_field :first_name %></p>
 
-      <h2><%= profile_form.label :last_name %></h2>
-      <p><%= profile_form.text_field :last_name %></p>
-    <% end %>
+    <p><%= f.password_field :password, :placeholder => 'password' %></p>
 
-    <p><%= f.submit "Sign up" %></p>
 
-    <br/>
+    <p><%= f.password_field :password_confirmation, :placeholder => 'password confirm' %></p>
+
+    <p><%= f.submit "Sign Up", :class => 'btn btn-success' %></p>
     <%= render :partial => "devise/shared/links" %>
   <% end %>
+</div>
+
+</div>
+</div><hr>
+<div class="row">
+
+<div class="span4"><div class="landingsmall">View Strategy</div><img src='/assets/front1.jpg'>
+
+</div>
+
+<div class="span4"><div class="landingsmall">Watch Examples</div><img src='/assets/front2.jpg'>
+</div>
+<div class="span4"><div class="landingsmall">Prepare</div><img src='/assets/front3.jpg'>
+</div>
+</div>
+<br><br>
+
+
 </div>

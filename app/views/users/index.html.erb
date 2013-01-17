@@ -1,9 +1,18 @@
 <div class="container">
+<div class="offset1 span6">
+<div class="title"><u>Coaches List</u></div><br>
 <% @users.each do |user| %>
 
-<br>
+<div class="indiepost">
 
-<%= link_to user.username, user_path(user) %>
+<%= image_tag user.image_url(:mini), :class => 'imgmore' if user.image?  %>
+
+
+
+UserName: <%= link_to user.username, user_path(user) %><br>
+Team:<br>
+Reputation: (+<%= user.reputation_for(:votes).to_i %> Likes) <br>
+</div>
 
 <% end %>
-</div>
+</div></div>

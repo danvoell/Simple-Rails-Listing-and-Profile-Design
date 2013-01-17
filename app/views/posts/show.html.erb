@@ -5,7 +5,7 @@
 <div class="offset1 span8">
 
 <div class="row">
-<%= image_tag @post.user.image_url(:mini) if @post.user.image? %>
+<%= image_tag @post.user.image_url(:mini), :class => 'imgmore' if @post.user.image? %>
 
  <div class="titleshow"><%= @post.title %>
 </div> <div class="titlesubshow">
@@ -39,7 +39,7 @@
 
 <div class="likeshow">
 Liked By:<br>
-<%= image_tag @post.image_url(:mini) if @post.image? %><%= image_tag @post.image_url(:mini) if @post.image? %>
+<%= image_tag @post.image_url(:mini), :class => 'imgmore' if @post.image? %><%= image_tag @post.image_url(:mini), :class => 'imgmore' if @post.image? %>
 <br><br><br><br></div>
 
 <div class="tagsshow">Tags:<br> <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
